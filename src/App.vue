@@ -1,6 +1,8 @@
 <template>
   <Navbar />
-  <router-view/>
+  <div class="all-page-content">
+    <router-view/>
+  </div>
 </template>
 
 <script >
@@ -13,6 +15,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+:root {
+  --navbar-height: 60px;
+}
 
+.all-page-content{
+  padding-top: var(--navbar-height);
+}
 </style>
