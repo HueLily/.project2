@@ -22,5 +22,6 @@ export default {
 
 .all-page-content{
   padding-top: var(--navbar-height);
+  width: 100%;
 }
 </style>
