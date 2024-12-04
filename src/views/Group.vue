@@ -17,6 +17,23 @@
                     </button>
                 </div>
             </div>
+
+            <div class="group-about">
+                <h2 class="about-header"> About </h2>
+                <p>{{ groupData.about }}</p>
+                <div class="about-status">
+                    <h3>
+                        <font-awesome-icon :icon="['far', 'address-card']" />
+                        {{ groupData.visibility }}
+                    </h3>
+                    <p>Anyone can see who's in the group and what they post.</p>
+                    <h3>
+                        <font-awesome-icon :icon="['fas', 'eye']" />
+                        Visible
+                    </h3>
+                    <p> Anyone can find this group.</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -30,7 +47,7 @@ export default {
             groupData: {
                 name: "Group where I can post meme without judegement",
                 members: "250 members",
-                about: " this is a group where we talking no judging meow",
+                about: "So like, this is the group where memes happen and brains... you know, like, they melt or something?? Idk, we're all just vibing here with frogs in hats and spaghetti logic. Anyway, join or whatever, but don’t ask why the toaster is yelling. Cats? Yes. Sanity? No. Also, meow or moo, your choice, but the lasagna isn’t free.",
                 visibility: "Public"
             }
         }
@@ -54,6 +71,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: aliceblue;
 }
 
 .group-content {
@@ -61,14 +79,18 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid red;
     height: 2000px;
+    position: relative;
+    gap: 2rem;
 }
 
 /* header - including banner image, name, group status, and description*/
 
 .group-header{
-    width: 90%;
+    width: 100%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .banner {
@@ -82,8 +104,9 @@ export default {
     display: flex;
     flex-direction: row;
     padding-bottom: 30px;
-    border-bottom: 2px solid #878d92;
+    /* border-bottom: 2px solid #878d92; */
     width: 100%;
+    padding: 2rem;
 }
 
 .group-name {
@@ -116,5 +139,26 @@ export default {
 .join-button:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+/* ______________________ */
+
+/* Group about (description) */
+.group-about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* margin: 2rem 0; */
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.about-header {
+    margin-bottom: 1rem;
+}
+
+.about-status h3{
+    margin-top: 20px;
 }
 </style>
