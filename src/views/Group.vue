@@ -36,10 +36,8 @@
             </div>
 
             <div class="post-feed">
-                <div v-for="(post, index) in posts" :key="index" class="post">
-                    <h3 class="post-author">{{ post.author }}</h3>
-                    <p class="post-content">{{ post.content }}</p>
-                    <p class="post-timestamp">{{ post.timestamp }}</p>
+                <div v-for="(post, index) in posts" :key="index">
+                    <Post :author="post.author" :content="post.content" :timestamp="new Date(post.timestamp)" />
                 </div>
             </div>
         </div>
@@ -47,6 +45,8 @@
 </template>
 
 <script>
+import Post from '../components/Post.vue';
+
 export default {
     name: 'Group',
     data() {
@@ -123,7 +123,7 @@ export default {
             }
             this.userJoined = !this.userJoined;
         }
-    }
+    },
 };
 </script>
 
@@ -228,37 +228,8 @@ export default {
 /* ______________________ */
 
 /* Post */
-.post {
-    padding: 1rem;
-    margin-bottom: 1rem;
+.post-feed {
     width: 100%;
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+    margin-bottom: 2rem;
 }
-
-.post:hover {
-    transform: scale(1.02);
-}
-
-.post-author {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.post-content {
-    margin-bottom: 0.5rem;
-    color: #555;
-    line-height: 1.5;
-}
-
-.post-timestamp {
-    font-size: 0.9rem;
-    color: #878d92;
-    text-align: right;
-}
-
 </style>
