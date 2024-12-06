@@ -49,6 +49,9 @@ import Post from '../components/Post.vue';
 
 export default {
     name: 'Group',
+    components: {
+        Post
+    },
     data() {
         return {
             userJoined: false,
