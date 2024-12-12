@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import './style.css'
 import App from './App.vue'
 import router from './router'
@@ -15,7 +16,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 // Add icons to the library
 library.add(fas, far, fab);
 
+const pinia = createPinia();
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon);
+app.use(pinia)
 app.use(router)
 app.mount('#app')

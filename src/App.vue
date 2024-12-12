@@ -3,7 +3,7 @@
   <div class="all-page-content">
     <router-view/>
   </div>
-  <!-- <Footer /> -->
+  <Footer />
 </template>
 
 <script >
